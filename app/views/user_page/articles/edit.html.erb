@@ -1,0 +1,26 @@
+<h1>Editing Article</h1>
+
+<p>
+<strong>作成日:</strong>
+<%= l @article.created_at %>
+</p>
+
+<p>
+<strong>更新日:</strong>
+<%= l @article.updated_at %>
+</p>
+
+<% if @article.published_at %>
+  <p>
+  <strong>公開日:</strong>
+  <%= l @article.published_at %>
+  </p>
+<% else %>
+  <strong>非公開</strong>
+<% end %>
+
+<%= render 'form', article: @article %>
+
+<%= link_to 'Show', @article %> |
+<%= link_to 'My Article List', user_articles_path %> |
+<%= link_to 'Article List', articles_path %>
