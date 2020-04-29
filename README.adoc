@@ -1,1 +1,16 @@
 = blogw
+
+Ruby:: 2.6.6
+DB:: PostgreSQL
+
+== Getting Started
+
+git clone してきたら config/database.yml を設定しておく
+
+[source,sh]
+----
+bundle install
+bin/rails db:create
+bin/rails db:migrate
+bin/rails s
+----
