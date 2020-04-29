@@ -10,6 +10,25 @@
   </head>
 
   <body>
+    <p id="notice"><%= notice %></p>
+    <p id="alert"><%= alert %></p>
+
     <%= yield %>
+
+    <div>
+      <h2>開発用</h2>
+      <ul>
+        <% if user_signed_in? %>
+          <li>Username:: <%= current_user.username %></li>
+          <li>Email:: <%= current_user.email %></li>
+          <li><%= link_to 'ホーム', user_root_path %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to 'ログイン', new_user_session_path %></li>
+          <li><%= link_to '登録', new_user_registration_path %></li>
+        <% end %>
+        <li><%= link_to 'Root', root_path %></li>
+      </ul>
+    </div>
   </body>
 </html>
