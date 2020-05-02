@@ -1,14 +1,16 @@
 import React from "react";
 
+import AsciiDoc from './AsciiDoc';
+
 const ShowArticle = props => {
   const { username, title, body } = props;
 
   return (
-    <React.Fragment>
+    <article>
       <h1>{title}</h1>
       <p>Writtend by {username}</p>
-      {body}
-    </React.Fragment>
+      <AsciiDoc content={body} />
+    </article>
   );
 };
 
