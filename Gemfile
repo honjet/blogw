@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'react-rails'
 
 # Curtomize
+gem 'active_model_serializers'
 gem 'devise'
 
 group :development, :test do
