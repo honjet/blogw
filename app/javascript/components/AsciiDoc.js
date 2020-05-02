@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 const asciidoctor = require("asciidoctor")();
 const sanitize = require("sanitize-html");
@@ -50,6 +51,10 @@ const AsciiDoc = props => {
   const sanitizedContent = sanitize(htmlContent, {...sanitizerOptions});
 
   return <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />;
+};
+
+AsciiDoc.propTypes = {
+  content: PropTypes.string.isRequired
 };
 
 export default AsciiDoc;

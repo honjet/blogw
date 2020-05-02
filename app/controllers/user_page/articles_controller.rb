@@ -8,8 +8,8 @@ class UserPage::ArticlesController < ApplicationController
     @articles = current_user.articles
   end
 
-  # GET /articles/1
-  # GET /articles/1.json
+  # GET /user/articles/1
+  # GET /user/articles/1.json
   def show
   end
 
