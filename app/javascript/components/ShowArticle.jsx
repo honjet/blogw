@@ -5,9 +5,9 @@ const ShowArticle = props => {
 
   return (
     <React.Fragment>
-      Username: {username}
-      Title: {title}
-      Body: {body}
+      <h1>{title}</h1>
+      <p>Writtend by {username}</p>
+      {body}
     </React.Fragment>
   );
 };

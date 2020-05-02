@@ -30,4 +30,4 @@
   </div>
 </article>
 
-<%= react_component('ShowArticle', @article.attributes.slice('username', 'title', 'body')) %>
+<%= react_component('ShowArticle', {username: @article.user.username, title: @article.title, body: @article.body}) %>
