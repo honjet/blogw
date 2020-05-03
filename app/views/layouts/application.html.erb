@@ -6,29 +6,19 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
 
   <body>
-    <p id="notice"><%= notice %></p>
-    <p id="alert"><%= alert %></p>
+    <%= render partial: 'header' %>
 
-    <%= yield %>
+    <main class="body-main bg-light text-dark">
+      <%= yield %>
+    </main>
 
-    <div>
-      <h2>開発用</h2>
-      <ul>
-        <% if user_signed_in? %>
-          <li>Username:: <%= current_user.username %></li>
-          <li>Email:: <%= current_user.email %></li>
-          <li><%= link_to 'マイページ', home_root_path %></li>
-          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to 'ログイン', new_user_session_path %></li>
-          <li><%= link_to '登録', new_user_registration_path %></li>
-        <% end %>
-        <li><%= link_to 'Root', root_path %></li>
-      </ul>
-    </div>
+    <footer class="body-footer bg-light text-muted text-center small">
+      © 2020 Honda, Jun
+    </footer>
   </body>
 </html>

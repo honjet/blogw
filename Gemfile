@@ -28,8 +28,6 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Front end
 gem 'react-rails'
-gem 'bootstrap'
-gem 'jquery-rails'
 
 # Curtomize
 gem 'active_model_serializers'

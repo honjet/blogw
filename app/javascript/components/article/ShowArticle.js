@@ -5,7 +5,6 @@ import AsciiDoc from "components/AsciiDoc";
 import { mapDate } from "mapper";
 
 const ShowArticle = props => {
-  console.log(props);
   const { username, title, body, draft, publishedAt, updatedAt } = mapDate(
     props,
     "publishedAt",
