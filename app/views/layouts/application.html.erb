@@ -21,7 +21,7 @@
         <% if user_signed_in? %>
           <li>Username:: <%= current_user.username %></li>
           <li>Email:: <%= current_user.email %></li>
-          <li><%= link_to 'ホーム', user_root_path %></li>
+          <li><%= link_to 'マイページ', home_root_path %></li>
           <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to 'ログイン', new_user_session_path %></li>

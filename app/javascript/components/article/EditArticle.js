@@ -16,7 +16,7 @@ const EditArticle = props => {
     <div className="edit-article">
       <FormArticle
         {...props}
-        action={`/user/${path}`}
+        action={`/home/${path}`}
         method={"patch"}
         title={editedTitle}
         body={editedBody}

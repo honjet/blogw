@@ -15,7 +15,7 @@ const NewArticle = props => {
     <div className="new-article">
       <FormArticle
         {...props}
-        action={"/user/articles"}
+        action={"/home/articles"}
         title={title}
         body={body}
         handleChangeTitle={handleChangeTitle}

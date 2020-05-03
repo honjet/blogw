@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  root 'articles#index'
-
   devise_for(
     :users,
     path: '',
@@ -14,11 +12,19 @@ Rails.application.routes.draw do
     }
   )
 
+  root 'articles#index'
   resources :articles, only: %w(index show)
-  namespace :user_page, path: :user, as: :user do
+
+  namespace :home do
     root 'articles#index'
     resources :articles
   end
+
+  resources :pages, param: :username, only: %w(index show)
+
+  # namespace :homes, path: :home, as: :home do
+  #   root to: redirect('/user/articles')
+  # end
 
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

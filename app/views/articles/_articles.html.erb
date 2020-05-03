@@ -1,0 +1,13 @@
+<ul class="article-list">
+  <% articles.each do |article| %>
+    <li>
+      <%= link_to article do %>
+        <article>
+          <h2><%= article.title %></h2>
+          <p><%= article.user.username %> created at <%= l article.created_at %></p>
+          <%= article.body_head %>
+        </article>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

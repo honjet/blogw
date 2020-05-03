@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     respond_to do |format|
-      format.html { redirect_to [:user, @article] if article_owner? }
+      format.html { redirect_to [:home, @article] if article_owner? }
       format.json { render json: @article }
     end
   end

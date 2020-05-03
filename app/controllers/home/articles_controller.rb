@@ -1,4 +1,4 @@
-class UserPage::ArticlesController < ApplicationController
+class Home::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
@@ -34,7 +34,7 @@ class UserPage::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to [:user, @article], notice: 'Article was successfully created.' }
+        format.html { redirect_to [:home, @article], notice: 'Article was successfully created.' }
         format.json { render :show, status: :created, location: @article }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class UserPage::ArticlesController < ApplicationController
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to [:user, @article], notice: 'Article was successfully updated.' }
+        format.html { redirect_to [:home, @article], notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }

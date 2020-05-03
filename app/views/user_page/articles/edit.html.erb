@@ -1,8 +1,0 @@
-<h1>Editing Article</h1>
-
-<%= react_component('article/EditArticle', serialize_with_csrf_token(@article)) %>
-
-<%= link_to 'Show', [:user, @article] %> |
-<%= link_to 'Destroy', user_article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'My Article List', user_articles_path %> |
-<%= link_to 'Article List', articles_path %>
