@@ -28,10 +28,13 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 # Front end
 gem 'react-rails'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Curtomize
 gem 'active_model_serializers'
 gem 'devise'
+gem 'devise-i18n'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
