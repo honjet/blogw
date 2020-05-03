@@ -2,8 +2,8 @@ class UserPage::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /articles
-  # GET /articles.json
+  # GET /user/articles
+  # GET /user/articles.json
   def index
     @articles = current_user.articles
   end
@@ -11,19 +11,23 @@ class UserPage::ArticlesController < ApplicationController
   # GET /user/articles/1
   # GET /user/articles/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.json { render json: @article }
+    end
   end
 
-  # GET /articles/new
+  # GET /user/articles/new
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
-  # GET /articles/1/edit
+  # GET /user/articles/1/edit
   def edit
   end
 
-  # POST /articles
-  # POST /articles.json
+  # POST /user/articles
+  # POST /user/articles.json
   def create
     @article = current_user.articles.build(article_params)
     @article.publish if @article.publish?
@@ -39,15 +43,15 @@ class UserPage::ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /articles/1
-  # PATCH/PUT /articles/1.json
+  # PATCH/PUT /user/articles/1
+  # PATCH/PUT /user/articles/1.json
   def update
     @article.attributes = article_params
     @article.toggle_draft if @article.draft_changed?
 
     respond_to do |format|
       if @article.save
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to [:user, @article], notice: 'Article was successfully updated.' }
         format.json { render :show, status: :ok, location: @article }
       else
         format.html { render :edit }
@@ -56,8 +60,8 @@ class UserPage::ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /articles/1
-  # DELETE /articles/1.json
+  # DELETE /user/articles/1
+  # DELETE /user/articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|

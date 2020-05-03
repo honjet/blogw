@@ -1,6 +1,6 @@
 <h1>Editing Article</h1>
 
-<%= react_component('article/EditArticle', **serialize(@article), authenticity_token: form_authenticity_token) %>
+<%= react_component('article/EditArticle', serialize_with_csrf_token(@article)) %>
 
 <%= link_to 'Show', [:user, @article] %> |
 <%= link_to 'Destroy', user_article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %> |

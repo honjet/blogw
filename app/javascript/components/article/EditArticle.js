@@ -5,7 +5,7 @@ import FormArticle from "components/article/FormArticle";
 import PreviewArticle from "components/article/PreviewArticle";
 
 const EditArticle = props => {
-  const {title, body, url} = props;
+  const {title, body, path} = props;
   const [editedTitle, setTitle] = useState(title);
   const [editedBody, setBody] = useState(body);
 
@@ -16,7 +16,7 @@ const EditArticle = props => {
     <div className="edit-article">
       <FormArticle
         {...props}
-        action={`/user/${url}`}
+        action={`/user/${path}`}
         method={"patch"}
         title={editedTitle}
         body={editedBody}
@@ -29,7 +29,7 @@ const EditArticle = props => {
 };
 
 EditArticle.propTypes = {
-  authenticity_token: PropTypes.string.isRequired,
+  authenticityToken: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
@@ -37,7 +37,7 @@ EditArticle.propTypes = {
   publishedAt: PropTypes.string,
   createdAt: PropTypes.string.isRequired,
   updatedAt: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
 };
 
 export default EditArticle;

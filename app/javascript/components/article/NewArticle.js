@@ -27,7 +27,7 @@ const NewArticle = props => {
 };
 
 NewArticle.propTypes = {
-  authenticity_token: PropTypes.string.isRequired
+  authenticityToken: PropTypes.string.isRequired
 };
 
 export default NewArticle;

@@ -5,7 +5,7 @@ const FormArticle = props => {
   const {
     action,
     method,
-    authenticity_token,
+    authenticityToken,
     title,
     body,
     handleChangeTitle,
@@ -23,7 +23,7 @@ const FormArticle = props => {
       <input
         type="hidden"
         name="authenticity_token"
-        value={authenticity_token}
+        value={authenticityToken}
       />
       <div className="field">
         <label htmlFor="article_title">タイトル</label>
@@ -69,7 +69,7 @@ const FormArticle = props => {
 FormArticle.propTypes = {
   action: PropTypes.string.isRequired,
   method: PropTypes.string,
-  authenticity_token: PropTypes.string.isRequired,
+  authenticityToken: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   body: PropTypes.string.isRequired,
   handleChangeTitle: PropTypes.func.isRequired,
