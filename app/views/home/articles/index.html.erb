@@ -6,7 +6,7 @@
   <ul class="article-list list-unstyled row row-cols-1 row-cols-md-2 row-cols-lg-3 ml-0 mr-0">
     <% @articles.each do |article| %>
       <li class="article-item col mb-4">
-        <%= link_to [:home, article], class: "card box-darker text-decoration-none text-reset h-100" do %>
+        <%= link_to [:home, article], class: "card box-darker text-decoration-none text-reset h-100", ontouchstart: "" do %>
           <article>
             <h4 class="card-title mb-1"><%= article.title %></h4>
             <p class="mb-1"><small class="text-muted"><%= l article.created_at %>, <%= article.user.username %></small></p>
