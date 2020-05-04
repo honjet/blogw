@@ -22,9 +22,5 @@ Rails.application.routes.draw do
 
   resources :pages, param: :username, only: %w(index show)
 
-  # namespace :homes, path: :home, as: :home do
-  #   root to: redirect('/user/articles')
-  # end
-
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
