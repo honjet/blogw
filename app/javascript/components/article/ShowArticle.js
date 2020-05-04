@@ -12,14 +12,12 @@ const ShowArticle = props => {
   );
 
   return (
-    <article>
+    <article className="show-article">
       <h1>{title}</h1>
-      <p>
-        {username} updated at {updatedAt.toLocaleString()}
+      <p className="text-muted">
+        {username} updated at {updatedAt.toLocaleString()}<br />
+        {draft ? "非公開" : `公開: ${publishedAt.toLocaleDateString()}`}
       </p>
-    <p>
-        {draft ? "非公開" : `公開日: ${publishedAt.toLocaleString()}`}
-    </p>
       <AsciiDoc content={body} />
     </article>
   );

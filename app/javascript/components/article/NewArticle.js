@@ -12,9 +12,10 @@ const NewArticle = props => {
   const handleChangeBody = e => setBody(e.target.value);
 
   return (
-    <div className="new-article">
+    <div className="new-article row row-cols-1 row-cols-md-2">
       <FormArticle
         {...props}
+        isNew={true}
         action={"/home/articles"}
         title={title}
         body={body}

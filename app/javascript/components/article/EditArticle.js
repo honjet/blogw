@@ -13,9 +13,10 @@ const EditArticle = props => {
   const handleChangeBody = e => setBody(e.target.value);
 
   return (
-    <div className="edit-article">
+    <div className="edit-article row row-cols-1 row-cols-lg-2">
       <FormArticle
         {...props}
+        isNew={false}
         action={`/home/${path}`}
         method={"patch"}
         title={editedTitle}

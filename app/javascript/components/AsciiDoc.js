@@ -50,7 +50,7 @@ const AsciiDoc = props => {
   const htmlContent = asciidoctor.convert(content);
   const sanitizedContent = sanitize(htmlContent, {...sanitizerOptions});
 
-  return <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />;
+  return <div className="asciidoc-converted" dangerouslySetInnerHTML={{ __html: sanitizedContent }} />;
 };
 
 AsciiDoc.propTypes = {
