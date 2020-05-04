@@ -2,14 +2,14 @@ class Home::ArticlesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
-  # GET /user/articles
-  # GET /user/articles.json
+  # GET /home/articles
+  # GET /home/articles.json
   def index
-    @articles = current_user.articles
+    @articles = current_user.articles.home
   end
 
-  # GET /user/articles/1
-  # GET /user/articles/1.json
+  # GET /home/articles/1
+  # GET /home/articles/1.json
   def show
     respond_to do |format|
       format.html
@@ -17,17 +17,17 @@ class Home::ArticlesController < ApplicationController
     end
   end
 
-  # GET /user/articles/new
+  # GET /home/articles/new
   def new
     @article = current_user.articles.build
   end
 
-  # GET /user/articles/1/edit
+  # GET /home/articles/1/edit
   def edit
   end
 
-  # POST /user/articles
-  # POST /user/articles.json
+  # POST /home/articles
+  # POST /home/articles.json
   def create
     @article = current_user.articles.build(article_params)
     @article.publish if @article.publish?
@@ -43,8 +43,8 @@ class Home::ArticlesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /user/articles/1
-  # PATCH/PUT /user/articles/1.json
+  # PATCH/PUT /home/articles/1
+  # PATCH/PUT /home/articles/1.json
   def update
     @article.attributes = article_params
     @article.toggle_draft if @article.draft_changed?
@@ -60,12 +60,12 @@ class Home::ArticlesController < ApplicationController
     end
   end
 
-  # DELETE /user/articles/1
-  # DELETE /user/articles/1.json
+  # DELETE /home/articles/1
+  # DELETE /home/articles/1.json
   def destroy
     @article.destroy
     respond_to do |format|
-      format.html { redirect_to articles_url, notice: 'Article was successfully destroyed.' }
+      format.html { redirect_to home_articles_url, notice: 'Article was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

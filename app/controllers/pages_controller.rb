@@ -13,7 +13,7 @@ class PagesController < ApplicationController
   # GET /pages/username.json
   def show
     @user = User.find_by(username: params[:username])
-    @articles = @user.articles.viewable
+    @articles = @user.articles.public
     respond_to do |format|
       format.html
       format.json { render json: @user }

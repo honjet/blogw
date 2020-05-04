@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.viewable
+    @articles = Article.public.order(updated_at: :desc)
     respond_to do |format|
       format.html
       format.json { render json: @articles }
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
-    @article = Article.viewable.find(params[:id])
+    @article = Article.public.find(params[:id])
   end
 
   def article_owner?
