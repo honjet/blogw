@@ -14,10 +14,63 @@
  *= require_self
  */
 
+$color-darker: #272727;
+$color-vivid: #d33847;
+$color-cool: #3847d3;
+
+.bg-darker {
+  background-color: $color-darker !important;
+}
+
+.bg-vivid {
+  background-color: $color-vivid !important;
+}
+
+.bg-cool {
+  background-color: $color-cool !important;
+}
+
+.bg-fresh {
+  background-color: #47d338 !important;
+}
+
+.btn-primary {
+  background-color: $color-cool;
+  border-color: $color-cool;
+
+  .outline {
+    color: $color-cool;
+  }
+}
+
+.btn-danger {
+  background-color: $color-vivid;
+  border-color: $color-vivid;
+
+  .outline {
+    color: $color-vivid;
+  }
+}
+
+.box-darker {
+  background-color: #323232;
+  border-color: #4b4b4b;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5);
+}
+
+.border-darker {
+  border-color: #4b4b4b !important;
+}
+
+.body-wrapper {
+  min-height: 100vh;
+}
+
 .body-main {
-  padding-top: 64px;
+  padding: 16px 0 32px;
 }
 
 .body-footer {
+  max-height: 80px;
   padding: 32px;
 }

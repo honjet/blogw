@@ -1,3 +1,34 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.article-list {
+  .article-item {
+    a.card {
+      padding: 8px;
+
+      &:hover {
+        transition: 0.5s;
+        background-color: #d33847 !important;
+      }
+    }
+  }
+}
+
+.new-article, .edit-article {
+  padding: 16px 0;
+}
+
+.form-article {
+  .article-body-control {
+    min-height: 160px;
+  }
+}
+
+.preview-article {
+  article {
+    .card-body {
+      padding: 8px;
+    }
+  }
+}
