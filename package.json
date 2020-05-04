@@ -10,11 +10,12 @@
     "asciidoctor": "^2.2.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.5.0",
+    "jquery": "3.4.1",
     "popper.js": "^1.16.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-textarea-autosize": "^7.1.2",
     "react_ujs": "^2.6.1",
     "sanitize-html": "^1.23.0"
   },
