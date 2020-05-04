@@ -1,8 +1,31 @@
-<h1>Editing Article</h1>
+<div class="container-xl">
+  <h1>記事を編集する</h1>
 
-<%= react_component('article/EditArticle', serialize_with_csrf_token(@article)) %>
+  <%= react_component('article/EditArticle', serialize_with_csrf_token(@article)) %>
 
-<%= link_to 'Show', [:home, @article] %> |
-<%= link_to 'Destroy', home_article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'My Article List', home_articles_path %> |
-<%= link_to 'Article List', articles_path %>
+  <div class="btn-toolbar justify-content-between" role="toolbar">
+    <%= link_to '記事に戻る', [:home, @article], class: "btn btn-outline-success" %>
+    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDeleteArticle">削除</button>
+  </div>
+</div>
+
+<%# Modal %>
+<div class="modal fade" id="confirmDeleteArticle" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content bg-light text-dark">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">確認</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        本当に削除しますか？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">いいえ</button>
+        <%= link_to '削除', home_article_path(@article), method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

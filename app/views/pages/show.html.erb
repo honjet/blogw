@@ -1,5 +1,7 @@
-<h1>Home</h1>
+<div class="container-xl">
+  <h1><%= @user.username %> のページ</h1>
 
-<h2>Atticles</h2>
+  <h2><%= @user.username %> の記事</h2>
 
-<%= render partial: 'articles/articles', object: @articles %>
+  <%= render partial: 'articles/articles', object: @articles %>
+</div>

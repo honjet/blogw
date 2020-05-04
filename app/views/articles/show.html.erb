@@ -1,8 +1,9 @@
-<%= render @article %>
+<div class="container-xl">
+  <%= render @article %>
 
-<hr>
+  <hr>
 
-<% if user_signed_in? && @article.user == current_user %>
-  <%= link_to 'Edit', edit_home_article_path(@article) %> |
-<% end %>
-<%= link_to 'All Articles', articles_path %>
+  <% if user_signed_in? && @article.user == current_user %>
+    <%= link_to 'Edit', edit_home_article_path(@article) %> |
+  <% end %>
+</div>

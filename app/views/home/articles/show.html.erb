@@ -1,5 +1,5 @@
-<%= render partial: 'articles/article', object: @article %>
+<div class="container-xl">
+  <%= link_to '編集する', edit_home_article_path(@article), class: 'btn btn-danger mt-2 mb-3' %>
 
-<%= link_to 'Edit', edit_home_article_path(@article) %> |
-<%= link_to 'My Articles', home_articles_path %> |
-<%= link_to 'All Articles', articles_path %>
+  <%= render partial: 'articles/article', object: @article %>
+</div>

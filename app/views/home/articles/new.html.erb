@@ -1,5 +1,5 @@
-<h1>New Article</h1>
+<div class="container-xl">
+  <h1>記事の作成</h1>
 
-<%= react_component('article/NewArticle', serialize_with_csrf_token(@article)) %>
-
-<%= link_to 'Back', articles_path %>
+  <%= react_component('article/NewArticle', serialize_with_csrf_token(@article)) %>
+</div>

@@ -5,20 +5,25 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
-  <body>
-    <%= render partial: 'header' %>
+  <body class="bg-dark">
+    <div class="body-wrapper d-flex flex-column">
+      <%= render partial: 'header' %>
 
-    <main class="body-main bg-light text-dark">
-      <%= yield %>
-    </main>
+      <%= content_tag(:div, alert, class: 'alert alert-warning mb-0') if alert %>
+      <%= content_tag(:div, notice, class: 'alert alert-primary mb-0') if notice %>
 
-    <footer class="body-footer bg-light text-muted text-center small">
-      © 2020 Honda, Jun
-    </footer>
+      <main class="body-main bg-darker text-light flex-grow-1">
+        <%= yield %>
+      </main>
+
+      <footer class="body-footer bg-dark text-muted text-center small">
+        © 2020 Honda, Jun
+      </footer>
+    </div>
   </body>
 </html>
