@@ -2,11 +2,16 @@ class Article < ApplicationRecord
   belongs_to :user
 
   scope :published, -> { where(draft: false) }
+  scope :recently, -> { order(created_at: :desc) }
 
   HEAD_LENGTH = 140
 
-  def self.viewable
-    published
+  def self.public
+    published.recently
+  end
+
+  def self.home
+    recently
   end
 
   # こいつはデコレータか？
