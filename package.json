@@ -17,7 +17,7 @@
     "react-dom": "^16.13.1",
     "react-textarea-autosize": "^7.1.2",
     "react_ujs": "^2.6.1",
-    "sanitize-html": "^1.23.0"
+    "sanitize-html": "^2.3.2"
   },
   "version": "0.1.0",
   "devDependencies": {
